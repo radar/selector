@@ -38,7 +38,7 @@ class AddressesController < ApplicationController
 
   def collect_form_data
     @countries = Country.order("name ASC")
-    if @address && @address.country
+    if @address.country
       @states = @address.country.states
     else
       @states = @countries.first.states
