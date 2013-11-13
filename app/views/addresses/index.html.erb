@@ -1,0 +1,22 @@
+<h2>Addresses</h2>
+
+<%= link_to "New Address", new_address_path, :class => "btn btn-primary" %>
+
+<table class='table'>
+  <thead>
+    <th>Country</th>
+    <th>State</th>
+    <th>Edit</th>
+    <th>Destroy</th>
+  </thead>
+  <tbody>
+    <% @addresses.each do |address| %>
+      <tr>
+        <td><%= address.country.name %></td>
+        <td><%= address.state.name %></td>
+        <td><%= link_to "Edit", edit_address_path(address) %></td>
+        <td><%= link_to "Destroy", address_path(address), :method => :delete, :data => { :confirm => "Are you sure you want to destroy  this address? "} %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

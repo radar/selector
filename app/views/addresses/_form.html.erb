@@ -1,0 +1,13 @@
+<%= form_for @address do |f| %>
+  <p id='country_field'>
+    <%= f.label :country_id %><br>
+    <%= f.select :country_id, @countries.map { |c| [c.name, c.id] } %>
+  </p>
+
+  <p id='state_field'> 
+    <%= f.label :state_id %><br>
+    <%= f.select :state_id, @states.map  { |s| [s.name, s.id] } %>
+  </p>
+
+  <%= f.submit :class => "btn btn-primary" %>
+<% end %>
